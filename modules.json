@@ -4,7 +4,7 @@
     "fullName": "Performance, Revenue, Integrated Staff & Monitoring Asset",
     "org": "PLN Nusa Daya Unit Pelaksana Sulawesi 1",
     "unit": "Unit Layanan Manado, Tahuna & Kotamobagu",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "home": "/home",
     "defaultTheme": "dark",
     "themes": [
@@ -100,7 +100,7 @@
       "short": "Kinerja Distribusi OMYO",
       "cardTitle": "Kinerja Distribusi OMYO",
       "pageTitle": "Kinerja Distribusi OMYO",
-      "desc": "Monitoring kinerja distribusi: Pelayanan Gangguan & Command Center, rating dan kepuasan pelanggan.",
+      "desc": "Monitoring kinerja distribusi: Pelayanan Gangguan & Command Center, rating dan kepuasan pelanggan, serta Laporan Dibatalkan (rekap tipe batal & kategori batal by Comcen per Distribusi / Area / Posko).",
       "icon": "omyo",
       "requiresLogin": false,
       "featured": false,
@@ -113,7 +113,8 @@
           "sutg",
           "cc_p2b",
           "cc_sutg"
-        ]
+        ],
+        "note": "Laporan Dibatalkan: baris dengan APKT_STATUS \"Dibatalkan\" pada sheet p2b & sutg; kolom TIPE_BATAL & ALASAN_BATAL."
       }
     },
     {
