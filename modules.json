@@ -1,0 +1,182 @@
+{
+  "app": {
+    "name": "PRISMA",
+    "fullName": "Performance, Revenue, Integrated Staff & Monitoring Asset",
+    "org": "PLN Nusa Daya Unit Pelaksana Sulawesi 1",
+    "unit": "Unit Layanan Manado, Tahuna & Kotamobagu",
+    "version": "1.0.0",
+    "home": "/home",
+    "defaultTheme": "dark",
+    "themes": [
+      "dark",
+      "light"
+    ]
+  },
+  "auth": {
+    "description": "Login mengikuti aturan HTML Performance: username (tidak peka huruf besar/kecil) + password persis, dibaca dari sheet 'user'. Kolom: nama, jabatan, username, password, bidang (SEMUA = semua bidang).",
+    "sheetId": "10Qpt2FZWzmTKXDt37YXiVisuw_BSPKPtxzIH9KeS34A",
+    "sheetName": "user",
+    "sheetUrl": "https://docs.google.com/spreadsheets/d/10Qpt2FZWzmTKXDt37YXiVisuw_BSPKPtxzIH9KeS34A/edit?gid=0#gid=0",
+    "sessionKey": "prisma-sess",
+    "protectedModules": [
+      "performance",
+      "revenue",
+      "asset",
+      "biop"
+    ]
+  },
+  "modules": [
+    {
+      "id": "performance",
+      "order": 2,
+      "route": "/performance",
+      "title": "PERFORMANCE",
+      "short": "Performance",
+      "cardTitle": "PERFORMANCE",
+      "pageTitle": "Performance",
+      "desc": "Monitoring SLA kinerja Distribusi, Transmisi & Pembangkit. Input realisasi, grafik capaian, laporan PDF / Excel.",
+      "icon": "performance",
+      "requiresLogin": true,
+      "featured": false,
+      "legacyUrl": "https://alvinhidayat-sys.github.io/performa-ulmtk/",
+      "sourceFile": "2_Performance.html",
+      "database": {
+        "type": "google-sheet",
+        "spreadsheetId": "10Qpt2FZWzmTKXDt37YXiVisuw_BSPKPtxzIH9KeS34A",
+        "sheets": [
+          "sla",
+          "Realisasi",
+          "user"
+        ],
+        "writeApi": "Google Apps Script Web App (simpan realisasi) — memakai username & password sesi login"
+      }
+    },
+    {
+      "id": "revenue",
+      "order": 3,
+      "route": "/revenue",
+      "title": "REVENUE",
+      "short": "Revenue",
+      "cardTitle": "REVENUE",
+      "pageTitle": "Revenue",
+      "desc": "Monitoring revenue O&M: capaian, denda & reward per bidang dan project.",
+      "icon": "revenue",
+      "requiresLogin": true,
+      "featured": false,
+      "legacyUrl": "https://alvinhidayat-sys.github.io/dashboard-tagihan-ulmtk/",
+      "sourceFile": "3_Revenue.html",
+      "database": {
+        "type": "google-sheet-gviz-csv",
+        "spreadsheetId": "1HaDG6itQzAShoYXG7njGQn39CFXJSeoCIT9uR8CV9nI",
+        "gid": "112457474",
+        "note": "Login internal modul digantikan login PRISMA (sheet 'user')."
+      }
+    },
+    {
+      "id": "asset",
+      "order": 4,
+      "route": "/asset",
+      "title": "Integrated Staff & Monitoring Asset",
+      "short": "Staff & Monitoring Asset",
+      "cardTitle": "Integrated Staff & Monitoring Asset",
+      "pageTitle": "Integrated Staff & Monitoring Asset",
+      "desc": "Dashboard aset perusahaan: tenaga kerja & kendaraan per bidang dan project.",
+      "icon": "asset",
+      "requiresLogin": true,
+      "featured": false,
+      "legacyUrl": "https://alvinhidayat-sys.github.io/ulmtk_asset/",
+      "sourceFile": "4_Integrated_staff_monitoring_asset.html",
+      "database": {
+        "type": "google-sheet-csv",
+        "spreadsheetId": "1INh_ebxB8v5nmsnwc4txSYM-D9MTP2MnQr-mhuU8yHw",
+        "publishedId": "2PACX-1vSodTo7DZ5XoQjpbI0RqsE4fHA3xKTpSTrpB2F3kw54caiZTYHdrm6Ey53-CDz3NWhbV-vVPXs4XRFz"
+      }
+    },
+    {
+      "id": "yantek",
+      "featured": true,
+      "order": 5,
+      "title": "Detail dan Analisis Kinerja Yantek Distribusi",
+      "short": "Yantek Distribusi",
+      "cardTitle": "Detail dan Analisis Kinerja Yantek Distribusi",
+      "desc": "Monitoring kinerja petugas Yantek Distribusi: analisis performa YO regional SULMAPANA dan detail WO / P0 per petugas.",
+      "icon": "yantek",
+      "requiresLogin": false,
+      "legacyUrl": "https://alvinhidayat-sys.github.io/yantek-performance/",
+      "sourceFile": "5_Analisi_dan_Kinerja_Yantek_Distribusi.html",
+      "children": [
+        {
+          "id": "yantek-analisis",
+          "route": "/yantek/analisis",
+          "title": "Analisis Kinerja Yantek Distribusi",
+          "short": "Analisis Kinerja",
+          "pageTitle": "Analisis Kinerja",
+          "icon": "analisis",
+          "requiresLogin": false,
+          "database": {
+            "type": "google-sheet-csv",
+            "spreadsheetId": "1myS7rJmBwJMinYj_XJNy-ZS6q0c3NtbknLVea7WpwFc",
+            "gid": "1833775340",
+            "note": "APKT-EIS-VCC (Virtual Command Center - Analytic Kinerja Yantek)"
+          }
+        },
+        {
+          "id": "yantek-detail",
+          "route": "/yantek/detail",
+          "title": "Detail Kinerja Petugas Yantek",
+          "short": "Detail Kinerja",
+          "pageTitle": "Detail Kinerja",
+          "icon": "detail",
+          "requiresLogin": false,
+          "database": {
+            "type": "google-sheet-gviz-csv",
+            "spreadsheetId": "1RTPWaXQDqz_bYK67Mwc-flXNK_wMtLQKS18Gf1oL-Pg"
+          }
+        }
+      ]
+    },
+    {
+      "id": "omyo",
+      "order": 6,
+      "route": "/omyo",
+      "title": "Kinerja Distribusi OMYO",
+      "short": "Kinerja Distribusi OMYO",
+      "cardTitle": "Kinerja Distribusi OMYO",
+      "pageTitle": "Kinerja Distribusi OMYO",
+      "desc": "Monitoring kinerja distribusi: Pelayanan Gangguan & Command Center, rating dan kepuasan pelanggan.",
+      "icon": "omyo",
+      "requiresLogin": false,
+      "featured": false,
+      "sourceFile": "6_kinerja_distribusi_omyo.html",
+      "database": {
+        "type": "google-sheet-gviz-csv",
+        "spreadsheetId": "199yFxZpD1S4AVoaRdjI_g8vv9hGmQVcXVImnik9MLjc",
+        "sheets": [
+          "p2b",
+          "sutg",
+          "cc_p2b",
+          "cc_sutg"
+        ]
+      }
+    },
+    {
+      "id": "biop",
+      "order": 7,
+      "route": "/biop",
+      "title": "Monitoring BIOP UL MTK",
+      "short": "Monitoring BIOP UL MTK",
+      "cardTitle": "Monitoring BIOP UL MTK",
+      "pageTitle": "Monitoring BIOP UL MTK",
+      "desc": "Monitoring penerimaan & realisasi: rekonsiliasi kas, outstanding dan pelaporan UL MTK.",
+      "icon": "biop",
+      "requiresLogin": true,
+      "featured": false,
+      "sourceFile": "7_monitoring_biop_ulmtk.html",
+      "database": {
+        "type": "google-sheet-gviz",
+        "spreadsheetId": "16eIpsY8Vyr2uNUAdoyBIV3RpUj6aQ6j3hwwE7j2I5AE",
+        "gid": "452482425"
+      }
+    }
+  ]
+}
