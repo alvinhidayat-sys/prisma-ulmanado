@@ -4,7 +4,7 @@
     "fullName": "Performance, Revenue, Integrated Staff & Monitoring Asset",
     "org": "PLN Nusa Daya Unit Pelaksana Sulawesi 1",
     "unit": "Unit Layanan Manado, Tahuna & Kotamobagu",
-    "version": "1.1.4",
+    "version": "1.1.5",
     "home": "/home",
     "defaultTheme": "dark",
     "themes": [
@@ -182,8 +182,10 @@
       "sourceFile": "7_monitoring_biop_ulmtk.html",
       "database": {
         "type": "google-sheet-gviz",
-        "spreadsheetId": "16eIpsY8Vyr2uNUAdoyBIV3RpUj6aQ6j3hwwE7j2I5AE",
-        "gid": "452482425"
+        "spreadsheetId": "1b5ioOwJkgvIMPHhAb4uWEqj66EysLpuMQvdtbaqkDE0",
+        "gid": "358939882",
+        "sheet": "DATABASE",
+        "note": "Sheet DATABASE (kolom Bulan, contoh SEPTEMBER 2026) dibaca otomatis; bulan baru langsung muncul sebagai filter. Ringkasan Posisi Kas membaca sheet DASHBOARD."
       }
     }
   ]
